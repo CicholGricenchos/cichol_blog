@@ -1,0 +1,9 @@
+		<ul class="article-list">
+			<% @articles.each do |article| %>
+				<li>
+					<h2 class="article-title"><%= link_to article.title, url(:article,:show,id:article.id) %></h2>
+					<p class="article-date"><%= article.created_at.localtime.to_date.to_formatted_s(:long_ordinal) %></p>
+				</li>
+			<% end %>
+
+		</ul>

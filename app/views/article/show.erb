@@ -1,0 +1,7 @@
+		<article>
+			<h2 class="article-title"><%= @article.title %></h2>
+			<p class="article-date"><%= @article.created_at.localtime.to_formatted_s(:long_ordinal) %></p>
+			<div class="article-body">
+				<%= GitHub::Markdown.render(@article.body).html_safe %>
+			</div>
+		</article>
