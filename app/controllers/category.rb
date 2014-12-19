@@ -25,7 +25,7 @@ CicholBlog::App.controllers :category, :cache => true do
   end
 
   get :show_json, :map=>'/category/:id/jsonp' do
-    category = Category.find_by(id: params[:id])
+    category = Category.find_by(id: params[:id]) or return error_404_jsonp
     @articles = category.articles.order('id DESC').all
     @title = category.name
     body = render(:list_js, layout: false)

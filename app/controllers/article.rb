@@ -8,7 +8,7 @@ CicholBlog::App.controllers :article, :cache => true do
 
   get :show_json, :map=>'/article/:id/jsonp' do
     content_type 'text/javascript'
-    @article = Article.find_by(id: params[:id])
+    @article = Article.find_by(id: params[:id]) or return error_404_jsonp
     body = render(:show, layout: false)
     article_hash = {
       :title => @article.title,
