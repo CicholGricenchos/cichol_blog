@@ -7,8 +7,7 @@ CicholBlog::App.controllers :category, :cache => true do
   end
 
   get :show, :map=>'/category/:id' do
-    category = Category.find_by(id: params[:id])
-    halt 404 if category.nil?
+    category = Category.find_by(id: params[:id]) or halt 404
     @articles = category.articles.order('id DESC').all
     @title = category.name
     render :list
