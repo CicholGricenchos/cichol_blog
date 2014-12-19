@@ -1,4 +1,4 @@
-CicholBlog::App.controllers :category do
+CicholBlog::App.controllers :category, :cache => true do
   
   get :recent, :map=>'/' do 
     @articles = Article.order('id DESC').all

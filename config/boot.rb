@@ -1,4 +1,4 @@
-RACK_ENV = 'production'
+#RACK_ENV = 'production'
 # Defines our constants
 RACK_ENV = ENV['RACK_ENV'] ||= 'development'  unless defined?(RACK_ENV)
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
@@ -42,6 +42,7 @@ end
 # Add your after (RE)load hooks here
 #
 Padrino.after_load do
+  CicholBlog::App::cache.clear
 end
 
 Padrino.load!

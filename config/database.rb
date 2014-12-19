@@ -30,11 +30,11 @@ ActiveRecord::Base.configurations[:production] = {
   :adapter   => 'mysql2',
   :encoding  => 'utf8',
   :reconnect => true,
-  :database  => 'cf_39383ca0_5e3a_44f8_84f8_26f75fafbdd0',
+  :database  => ENV['paas_database'],
   :pool      => 5,
-  :username  => '5nZCxvyZf6gEBcNA',
-  :password  => '97IH2TEwKZ69NjVx',
-  :host      => '10.9.1.188',
+  :username  => ENV['paas_username'],
+  :password  => ENV['paas_password'],
+  :host      => ENV['paas_host'],
   :socket    => '/tmp/mysql.sock'
 
 }

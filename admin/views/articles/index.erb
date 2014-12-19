@@ -56,7 +56,7 @@
           <td class=list-column> <%= article.id %> </td>
           <td class=list-column> <%= article.title %> </td>
           <td class=list-column> <%= article.category_id %> </td>
-          <td class=list-column> <%= article.body %> </td>
+          <td class=list-column> <%= article.body[0..100] + '...' %> </td>
           <td class=list-column> <%= article.visible ? tag_icon(:ok) : tag_icon(:remove) %> </td>
           <td class=list-column> <%= time_ago_in_words article.created_at %></td>
           <td class=list-column> <%= time_ago_in_words article.updated_at %></td>

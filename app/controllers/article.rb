@@ -1,4 +1,4 @@
-CicholBlog::App.controllers :article do
+CicholBlog::App.controllers :article, :cache => true do
   
   get :show, :map=>'/article/:id' do
     @article = Article.find params[:id]
