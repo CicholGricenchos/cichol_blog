@@ -2,7 +2,7 @@
 
 body {
 	margin:0;
-	background: #f5f5f5 url("mbg.jpg") fixed no-repeat;
+	background: #f5f5f5 url("http://7mj4yb.com1.z0.glb.clouddn.com/mbg.jpg") fixed no-repeat;
 	background-size: cover;
 	padding: 25px 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
@@ -25,6 +25,9 @@ body {
 
 a {
 	text-decoration: none;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 header {
