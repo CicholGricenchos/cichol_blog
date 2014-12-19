@@ -52,10 +52,6 @@ module CicholBlog
     #   end
     #
 
-    error ActiveRecord::RecordNotFound do
-      halt 404
-    end
-
     error 404 do
       render 'error/404', :layout => 'application'
     end
