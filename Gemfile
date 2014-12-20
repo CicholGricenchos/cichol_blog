@@ -12,6 +12,7 @@ source 'http://ruby.taobao.org'
 
 # Project requirements
 gem 'rake'
+gem 'thin'
 
 # Component requirements
 gem 'bcrypt'
