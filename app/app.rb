@@ -52,6 +52,8 @@ module CicholBlog
     #   end
     #
 
+    use Rack::Deflater
+
     error 404 do
       render 'error/404', :layout => 'application'
     end
