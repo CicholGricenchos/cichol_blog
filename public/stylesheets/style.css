@@ -8,7 +8,7 @@ body {
 .main {
   background: rgba(250, 250, 250, 0.7);
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.7);
+  box-shadow: 0 2px 6px rgba(100, 100, 100, 0.8);
   padding: 30px 90px;
   box-sizing: border-box; }
 
@@ -54,34 +54,42 @@ nav {
     nav a.active {
       font-weight: bolder; }
 
-article .article-title {
-  color: #337;
-  font-size: 22px;
-  margin: 44px 0 0 0; }
-article .article-date {
-  color: #444;
-  margin: 0 0 30px 0;
-  font-size: 14px; }
-article .article-body {
-  text-align: left;
-  line-height: 1.4em;
-  letter-spacing: 0.4px; }
-  article .article-body p {
-    font-size: 15px; }
-    article .article-body p code {
-      color: #eee;
+article {
+  text-shadow: #eee 0px 1px 0px; }
+  article .article-title {
+    color: #337;
+    font-size: 22px;
+    margin: 44px 0 0 0; }
+  article .article-date {
+    color: #444;
+    margin: 0 0 30px 0;
+    font-size: 14px; }
+  article .article-body {
+    text-align: left;
+    line-height: 1.4em;
+    letter-spacing: 0.4px;
+    color: #04042c; }
+    article .article-body p {
+      font-size: 15px; }
+      article .article-body p code {
+        color: #eee;
+        background-color: #29281e;
+        border-radius: 3px;
+        padding: 0.2em; }
+    article .article-body pre {
+      word-wrap: break-word;
       background-color: #29281e;
-      border-radius: 3px;
-      padding: 0.2em; }
-  article .article-body pre {
-    word-wrap: break-word;
-    background-color: #29281e;
-    color: #eee;
-    padding: 1em;
-    border-radius: 5px;
-    line-height: 1.2em; }
-  article .article-body code {
-    font-family: monospace; }
+      color: #eee;
+      padding: 1em;
+      border-radius: 5px;
+      line-height: 1.2em; }
+    article .article-body code {
+      font-family: monospace;
+      font-size: 13px;
+      text-shadow: none; }
+    article .article-body a {
+      color: rgba(0, 0, 0, 0.9);
+      text-decoration: underline; }
 
 .article-list {
   padding-left: 0;

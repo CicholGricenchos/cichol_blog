@@ -6,7 +6,7 @@ body {
 	background-size: cover;
 	padding: 25px 0;
 	font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', sans-serif;
-
+	
 }
 
 .main {
@@ -79,7 +79,8 @@ nav {
 }
 
 article {
-	
+	text-shadow: #eee 0px 1px 0px;
+
 	.article-title {
 		color: #337;
 		font-size: 22px;
@@ -96,6 +97,8 @@ article {
 		text-align: left;
 		line-height: 1.4em;
 		letter-spacing: 0.4px;
+		color: rgb(4,4,44);
+
 		p {
 			font-size: 15px;
 			code {
@@ -117,6 +120,13 @@ article {
 
 		code {
 			font-family: monospace;
+			font-size: 13px;
+			text-shadow: none;
+		}
+
+		a {
+			color: rgba(0,0,0,0.9);
+			text-decoration: underline;
 		}
 	}
 }
