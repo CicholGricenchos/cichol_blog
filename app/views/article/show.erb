@@ -1,7 +1,35 @@
-		<article>
-			<h2 class="article-title"><%= @article.title %></h2>
-			<p class="article-date"><%= @article.created_at.localtime.to_formatted_s(:long_ordinal) %></p>
-			<div class="article-body">
-				<%= GitHub::Markdown.render(@article.body).html_safe %>
-			</div>
-		</article>
+	<div id="primary">
+		<div id="content" role="main">
+			<!--
+			<nav id="nav-single">
+				<h3 class="assistive-text">Post navigation</h3>
+				<span class="nav-previous"><a href="http://cichol.tk/?p=35" rel="prev"><span class="meta-nav">←</span> Previous</a></span>
+				<span class="nav-next"><a href="http://cichol.tk/?p=63" rel="next">Next <span class="meta-nav">→</span></a></span>
+			</nav>
+			-->
+
+							
+			<article class="post hentry">
+				<header class="entry-header">
+					<h1 class="entry-title"><%= @article.title %></h1>
+					<div class="entry-meta">
+						<span class="sep">Posted on </span><a href="/article/<%= @article.id %>" title="<%= @article.created_at.localtime.strftime("%H:%M") %>" rel="bookmark"><time class="entry-date" datetime="<%= @article.created_at %>"><%= @article.created_at.localtime.to_date.to_formatted_s(:long_ordinal) %></time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="/article/1" title="View all posts by Cichol" rel="author">Cichol</a></span></span>
+					</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+
+				<div class="entry-content">
+					<%= GitHub::Markdown.render(@article.body).html_safe %>
+				</div><!-- .entry-content -->
+
+				<footer class="entry-meta">
+					This entry was posted in <a href="/category/<%= @article.category_id %>" title="View all posts in <%= @article.category.name %>" rel="category"><%= @article.category.name %></a> by <a href="/article/1">Cichol</a>. Bookmark the <a href="/article/<%= @article.id %>" title="Permalink to <%= @article.title %>" rel="bookmark">permalink</a>.		
+				</footer><!-- .entry-meta -->
+			</article>
+
+			<div id="comments">
+				<p class="nocomments">Comments are closed.</p>
+			</div><!-- #comments -->
+
+					
+		</div><!-- #content -->
+	</div><!-- #primary -->

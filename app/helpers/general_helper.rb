@@ -3,13 +3,14 @@
 module CicholBlog
   class App
     module GeneralHelper
-      def error_404_jsonp
-        hash = {
-          title: "404",
-          body: render('error/404', layout: false)
-        }
-        "show(#{hash.to_json})"
+      def rand_for_str(arr)
+        arr[(rand(arr.size))]
       end
+
+      def nav?(path)
+        request.path == path ? 'current_page_item' : 'page_item'       
+      end
+
     end
 
     helpers GeneralHelper

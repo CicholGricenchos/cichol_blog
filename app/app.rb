@@ -11,7 +11,7 @@ module CicholBlog
     # Caching support.
     #
     register Padrino::Cache
-    enable :caching
+    #enable :caching
     #
     # You can customize caching store engines:
     #
@@ -51,35 +51,6 @@ module CicholBlog
     #     disable :asset_stamp # no asset timestamping for dev
     #   end
     #
-
-=begin
-
-    get :generate, :map => '/generate' do
-      account = Account.find_by(id: session[:account_id]) unless session[:account_id].nil?
-      if account && account.role == 'admin'
-        path = File.expand_path('../../app/html', __FILE__)
-        Article.all.each do |a|
-          @title = a.title
-          @article = a
-          FileUtils.mkpath("#{path}/article/#{a.id}")
-          File.open("#{path}/article/#{a.id}/index.html", 'wb'){ |f| f.write(render('article/show'))}
-        end
-
-        Category.all.each do |c|
-          @title = c.name
-          @articles = c.articles.order('id DESC').all
-          FileUtils.mkpath("#{path}/category/#{c.id}")
-          File.open("#{path}/category/#{c.id}/index.html", 'wb'){ |f| f.write(render('category/list'))}
-        end
-        
-        @title = "Mabinogion"
-        @articles = Article.order('id DESC').all
-        File.open("#{path}/index.html", 'wb'){ |f| f.write(render('category/list'))}
-        'ok'
-      end
-    end
-    
-=end
 
     error 404 do
       render 'error/404', :layout => 'application'
