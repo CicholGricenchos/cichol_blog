@@ -14,7 +14,7 @@ CicholBlog::App.controllers :category, :cache => true do
   end
 
   get :home_json, :map=>'/home/jsonp' do
-    @articles = Article.order('id DESC').all
+    @articles = Article.where('visible == 1 ').order('id DESC').all
     body = render(:list_js, layout: false)
     list_hash = {
       title: "Mabinogion",
@@ -26,7 +26,7 @@ CicholBlog::App.controllers :category, :cache => true do
 
   get :show_json, :map=>'/category/:id/jsonp' do
     category = Category.find_by(id: params[:id]) or return error_404_jsonp
-    @articles = category.articles.order('id DESC').all
+    @articles = category.articles.where('visible == 1 ').order('id DESC').all
     @title = category.name
     body = render(:list_js, layout: false)
     list_hash = {

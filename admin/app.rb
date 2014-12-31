@@ -4,6 +4,7 @@ module CicholBlog
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Admin::AccessControl
+    use ConnectionPoolManagement
 
     ##
     # Application configuration options
