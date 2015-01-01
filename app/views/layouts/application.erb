@@ -67,7 +67,7 @@
 			<img src="/images/headers/<%= rand_for_str(%w{chessboard hanoi lanterns pine-cone shore trolley wheel willow}) %>.jpg" width="1000" height="288" />
 		</a>
 
-		<form method="get" id="searchform" action="">
+		<form method="get" id="searchform" action="/search">
 			<label for="s" class="assistive-text">Search</label>
 			<input type="text" class="field" name="s" id="s" placeholder="Search" />
 			<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search" />
@@ -93,7 +93,7 @@
 		<%= yield %>
 		<div id="secondary" class="widget-area" role="complementary">
 			<aside id="search-2" class="widget widget_search">
-				<form method="get" id="searchform" action="">
+				<form method="get" id="searchform" action="/search">
 					<label for="s" class="assistive-text">Search</label>
 					<input type="text" class="field" name="s" id="s" placeholder="Search">
 					<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
