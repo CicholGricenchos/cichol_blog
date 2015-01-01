@@ -93,7 +93,7 @@
 		<%= yield %>
 		<div id="secondary" class="widget-area" role="complementary">
 			<aside class="widget"><h3 class="widget-title">碎碎念</h3>	
-				<div class="textwidget"><%= Micropost.last.body %></div>
+				<div class="textwidget"><%= Micropost.last.body.gsub(/\n/, '<br>').html_safe %></div>
 			</aside>
 			<aside class="widget"><h3 class="widget-title">近期文章</h3>
 				<ul>
