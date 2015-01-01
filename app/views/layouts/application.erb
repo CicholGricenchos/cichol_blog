@@ -79,9 +79,9 @@
 			<div class="menu"><ul>
 				<li class="<%= nav?("/") %>"><a href="/">首页</a></li>
 				<li class="<%= nav?("/article/1") %>"><a href="/article/1">关于</a></li>
-				<li class="<%= nav?("/category/1") %>"><a href="/category/1">随笔</a></li>
-				<li class="<%= nav?("/category/2") %>"><a href="/category/2">技术</a></li>
-				<li class="<%= nav?("/category/3") %>"><a href="/category/3">哲学</a></li>
+				<% Category.all.each do |c| %>
+				<li class="<%= nav?("/category/#{c.id}") %>"><a href="/category/<%= c.id %>"><%= c.name %></a></li>
+				<% end %>
 				<li class="page_item"><a href="http://fsk.im/music" target="_blank">音乐</a></li>
 			</ul></div>
 		</nav>
