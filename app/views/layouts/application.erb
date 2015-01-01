@@ -92,35 +92,26 @@
 
 		<%= yield %>
 		<div id="secondary" class="widget-area" role="complementary">
-			<aside id="search-2" class="widget widget_search">
-				<form method="get" id="searchform" action="/search">
-					<label for="s" class="assistive-text">Search</label>
-					<input type="text" class="field" name="s" id="s" placeholder="Search">
-					<input type="submit" class="submit" name="submit" id="searchsubmit" value="Search">
-				</form>
+			<aside class="widget"><h3 class="widget-title">碎碎念</h3>	
+				<div class="textwidget"><%= Micropost.last.body %></div>
 			</aside>
-			<aside class="widget"><h3 class="widget-title">Recent Posts</h3>
+			<aside class="widget"><h3 class="widget-title">近期文章</h3>
 				<ul>
 					<% Article.where('visible = 1').order('id DESC').limit(5).all.each do |a| %>
 						<li><a href="/article/<%= a.id %>"><%= a.title %></a></li>
 					<% end %>
 				</ul>
 			</aside>
-			<!--
-			<aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3><ul>
-				<li><a href="http://cichol.tk/?m=201207">July 2012</a></li>
-			</ul></aside>
-			-->
-			<aside class="widget"><h3 class="widget-title">Categories</h3>
+			<aside class="widget"><h3 class="widget-title">分类目录</h3>
 				<ul>
 					<% Category.all.each do |c| %>
 						<li><a href="/category/<%= c.id %>" title="View all posts filed under <%= c.name %>"><%= c.name %></a></li>
 					<% end %>
 				</ul>
 			</aside>
-			<aside class="widget"><h3 class="widget-title">Meta</h3>
+			<aside class="widget"><h3 class="widget-title">功能</h3>
 				<ul>
-					<li><a href="/admin">Log in</a></li>
+					<li><a href="/admin">管理站点</a></li>
 					<!--
 					<li><a href="http://cichol.tk/?feed=rss2" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 					<li><a href="http://cichol.tk/?feed=comments-rss2" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>

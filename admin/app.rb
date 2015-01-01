@@ -34,6 +34,7 @@ module CicholBlog
     end
 
     access_control.roles_for :admin do |role|
+      role.project_module :microposts, '/microposts'
       role.project_module :categories, '/categories'
       role.project_module :articles, '/articles'
       role.project_module :accounts, '/accounts'
