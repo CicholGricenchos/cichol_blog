@@ -27,6 +27,7 @@ module CicholBlog
       def join_params(arg = {})
         new_params = params.dup
         arg.each { |k,v| new_params[k.to_s] = v }
+        new_params.delete('id')
         new_params = new_params.to_a
         "?#{new_params.collect{ |a| a.join('=') }.join('&')}"
       end
