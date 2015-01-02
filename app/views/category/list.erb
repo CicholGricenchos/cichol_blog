@@ -21,7 +21,7 @@
 						</header><!-- .entry-header -->
 
 						<div class="entry-content">
-							<%= truncate(GitHub::Markdown.render(a.body), :length=>240).html_safe %>
+							<%= truncate(GitHub::Markdown.render(a.body), :length=>240).gsub(/<hr>[\s\S]*/, '').html_safe %>
 						</div><!-- .entry-content -->
 						
 						<footer class="entry-meta">
