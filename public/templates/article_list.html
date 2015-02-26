@@ -1,0 +1,35 @@
+
+			<div id="content" role="main" ms-controller="articleList">
+
+			<article class="post hentry" ms-repeat="articles">
+				<header class="entry-header">
+					<h1 class="entry-title"><a ms-href="#!/article/{{el.id}}" rel="bookmark">{{el.title}}</a></h1>
+					
+					<div class="entry-meta">
+						<span class="sep">Posted on </span><a ms-href="#!/article/{{el.id}}" ms-attr-title="{{avalon.filters.date(el.created_at, 'mm:ss')}}" rel="bookmark"><time class="entry-date" ms-attr-datetime="{{el.created_at}}">{{el.created_at | date('longDate')}}</time></a><span class="by-author"> <span class="sep"> by </span><span class="author vcard"><a class="url fn n" href="#!/article/1" title="View all posts by Cichol" rel="author">Cichol</a></span></span>
+					</div><!-- .entry-meta -->
+					<div class="comments-link">
+						<a ms-href="#!/article/{{el.id}}#comments" ms-attr-title="Comment on {{el.title}}!"></a>
+					</div>
+				</header><!-- .entry-header -->
+
+				<div class="entry-content" ms-html="el.body"></div><!-- .entry-content -->
+				
+				<footer class="entry-meta">
+					<span class="cat-links">
+					<span class="entry-utility-prep entry-utility-prep-cat-links">Posted in </span><a ms-href="#!/category/{{el.category.id}}" ms-attr-title="View all posts in {{el.category.name}}" rel="category">{{el.category.name}}</a></span>										
+				</footer><!-- .entry-meta -->
+			</article>
+
+				
+				<nav id="nav-below">
+					<h3 class="assistive-text">Post navigation</h3>
+					<div class="nav-previous">
+						<a ms-if="pagination.next" ms-href="#!{{path}}?page={{page+1}}"><span class="meta-nav">←</span> Older posts</a>
+					</div>
+					<div class="nav-next">
+						<a ms-if="pagination.prev" ms-href="#!{{path}}?page={{page-1}}">Newer posts <span class="meta-nav">→</span></a>
+					</div>
+				</nav>
+
+			</div><!-- #content -->

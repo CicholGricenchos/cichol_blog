@@ -1,0 +1,31 @@
+
+		<div id="content" role="main" ms-controller="article">
+			<!--
+			<nav id="nav-single">
+				<h3 class="assistive-text">Post navigation</h3>
+				<span class="nav-previous"><a ms-href="http://cichol.tk/?p=35" rel="prev"><span class="meta-nav">←</span> Previous</a></span>
+				<span class="nav-next"><a ms-href="http://cichol.tk/?p=63" rel="next">Next <span class="meta-nav">→</span></a></span>
+			</nav>
+			-->
+
+			<article class="post hentry">
+				<header class="entry-header">
+					<h1 class="entry-title">{{title}}</h1>
+					<div class="entry-meta">
+						<span class="sep">Posted on </span><a ms-href="#!/article/{{id}}" ms-attr-title="{{avalon.filters.date(created_at, 'hh:mm')}}" rel="bookmark"><time class="entry-date" ms-attr-datetime="{{created_at}}">{{created_at | date('longDate')}}</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="#!/article/1" title="View all posts by Cichol" rel="author">Cichol</a></span></span>
+					</div><!-- .entry-meta -->
+				</header><!-- .entry-header -->
+
+				<div class="entry-content" ms-html="body"></div><!-- .entry-content -->
+
+				<footer class="entry-meta">
+					This entry was posted in <a ms-href="#!/category/{{category.id}}" ms-attr-title="View all posts in {{category.name}}" rel="category">{{category.name}}</a> by <a href="#!/article/1">Cichol</a>. Bookmark the <a ms-href="#!/article/{{id}}" ms-attr-title="Permalink to {{title}}" rel="bookmark">permalink</a>.
+				</footer><!-- .entry-meta -->
+			</article>
+
+			<div id="comments">
+				<p class="nocomments">Comments are closed.</p>
+			</div><!-- #comments -->
+
+					
+		</div><!-- #content -->
